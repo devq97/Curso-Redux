@@ -1,0 +1,53 @@
+Ciclo de vida de un componente:
+-Montado: Renderizado de un componente
+constructor()
+componentWillMount() /// Setear algún estado
+render() // Tiene toda la estructura del componente
+componentDidMount: Luego de que el componente se haya montado
+
+Actualización
+
+componentWillReceiveProps() //Recibir nuevas propiedades
+shouldComponentUpdate() // Condiciona si el componente se debe volver a renderizar
+componentWillUpdate() // antes de re-renderizar el componente
+render() // re-render
+componentDidUpdate // lUego del re-render
+
+Desmontado
+
+componentWillUnmount()// Antes de que el componente sea retirado de la aplicación
+
+Manejo de Errores
+
+componentDidCatch // Si ocurre un error este metodo es invocado, el manejo de errores ocurre en componentes hijos
+
+
+Componentes puros /////////////// Tiene shouldComponentUpdate ya esta incluido
+Componentes funcionales
+
+Smart (Qué hace el componente) & Dumb(Cómo se hace) Components
+
+Presentacional Cómo se ve
+
+Puede contener smart components u otros componentes de UI
+Permiten composición con `[props.children]``
+No depeden del resto de la aplicación
+No especifica cómo los datos son cargados o mutados
+Recibe datos y callbacks solo con propiedades
+Rara vez tienen su propio estado
+Están escritos como componentes funcionales a menos que necesiten mejoras de performance. Sólo pueden ser Componentes funcionales o Pure Components
+Containers Qué hace
+
+Concetrado en el funcionamiento de la aplicación
+Contienen componentes de UI u otros containers
+No tienen estilos
+Proveen de datos a componentes de UI u otros contenedores
+Proveen de callbacks a la UI
+Normalmente tienen estado
+Llaman acciones
+Generados por higher order components
+
+Para qué sirve
+MVC - Vista podria ser dumb y el COntroler puede ser el Smart
+Separación de responsabilidades
+Mejora la capacidad de reutilizar componentes 
